@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #F2F2F2;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  vertical-align: baseline;
+}
+
+p {
+  color: #646464;
+  font-size: 14px;
+}
+
+span {
+  font-size: 14px;
+}
+
+a {
+  color: #6034FF;
+  font-size: 14px;
+  vertical-align: baseline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
