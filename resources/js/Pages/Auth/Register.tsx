@@ -65,7 +65,7 @@ export default function Register() {
 								placeholder="exemplo@site.com"
 								autoComplete="username"
 								onChange={(e) => setData('email', e.target.value)}
-								error={errors.name}
+								error={errors.email}
 							/>
 						</div>
 
