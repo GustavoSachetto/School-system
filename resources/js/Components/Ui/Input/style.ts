@@ -12,7 +12,7 @@ export const StyledContainerInput = styled.div`
   flex-direction: column;
 `;
 
-export const StyledInput = styled.input<{ $error?: boolean }>`
+export const StyledInput = styled.input<{ $error?: string }>`
   width: 100%;
   margin-top: 4px;
   color: ${colors.system.neutral.darkColor};

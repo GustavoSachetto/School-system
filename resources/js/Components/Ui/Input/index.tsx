@@ -9,7 +9,7 @@ export type InputProps = {
 export default function Input({ error, ...props }: InputProps) {
   return (
     <StyledContainerInput>
-      <StyledInput {...props} />
+      <StyledInput $error={error} {...props} />
       <ContainerError message={error} />
     </StyledContainerInput>
   )
