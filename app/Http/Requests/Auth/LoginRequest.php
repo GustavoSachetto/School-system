@@ -27,8 +27,24 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'string', 'email'],
+            'email'    => ['required', 'string', 'email'],
             'password' => ['required', 'string'],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'email.required'    => 'O email é necessário',
+            'email.string'      => 'O email deve conter apenas caracteres',
+            'email.email'       => 'O email deve ser um endereço de email valido',
+            'password.required' => 'A senha é necessária',
+            'password.string'   => 'A senha deve conter apenas caracteres',
         ];
     }
 
@@ -45,7 +61,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => trans('Autorização falhou, email ou senha inválidos'),
             ]);
         }
 
