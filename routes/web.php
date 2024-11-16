@@ -1,16 +1,19 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Course;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+    return Inertia::render('Home', [
+        'courses' => Course::all()
+    ]);
+})->name('home');
+
+Route::get('/course/{title}', function (string $title) {
+    return Inertia::render('Course', [
+        'course' => Course::where('title', $title)->firstOrFail()
     ]);
 });
 

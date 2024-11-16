@@ -1,17 +1,10 @@
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
-import Checkbox from '@/Components/Ui/Checkbox';
-import Input from '@/Components/Ui/Input';
-import Label from '@/Components/Ui/Label';
-import PasswordInput from '@/Components/Ui/PasswordInput';
+import { Form, Input } from '@/Components/Ui';
 import Button from '@/Components/Ui/Button';
-import Form from '@/Components/Ui/Form';
-import Title from '@/Components/Ui/Form/Components/Title';
-import Fieldset from '@/Components/Ui/Form/Components/Fieldset';
-import ContainerInput from '@/Components/Ui/Form/Components/ContainerInput';
 import If from '@/Components/If';
 
-type LoginProps = {
+export type LoginProps = {
   status?: string;
   canResetPassword: boolean;
 }
@@ -41,19 +34,20 @@ export default function Login({ status, canResetPassword }: LoginProps) {
         </div>
       </If>
 
-      <Form onSubmit={submit}>
-        <Title>Entrar</Title>
+      <Form.Root onSubmit={submit}>
+        <Form.Title>Entrar</Form.Title>
 
         <p>
           Bem-vindo de volta! Que essa nova jornada seja feliz, tranquila e cheia de aprendizados! Conte conosco para o que precisar!
         </p>
 
-        <Fieldset>
-          <ContainerInput>
-            <div>
-              <Label htmlFor="email" required>Email</Label>
+        <Form.Fieldset>
+          <Form.Container>
+            
+            <Input.Group>
+              <Input.Label htmlFor="email" required>Email</Input.Label>
 
-              <Input
+              <Input.Text
                 id="email"
                 type="email"
                 name="email"
@@ -63,12 +57,14 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                 error={errors.email}
                 onChange={(e) => setData('email', e.target.value)}
               />
-            </div>
 
-            <div>
-              <Label htmlFor="password" required>Senha</Label>
+              <Input.Error message={errors.email} />
+            </Input.Group>
 
-              <PasswordInput
+            <Input.Group>
+              <Input.Label htmlFor="password" required>Senha</Input.Label>
+
+              <Input.Password
                 id="password"
                 name="password"
                 value={data.password}
@@ -77,11 +73,14 @@ export default function Login({ status, canResetPassword }: LoginProps) {
                 error={errors.password}
                 onChange={(e) => setData('password', e.target.value)}
               />
-            </div>
-          </ContainerInput>
+
+              <Input.Error message={errors.password} />
+            </Input.Group>
+            
+          </Form.Container>
 
           <div className="flex justify-between">
-            <Checkbox 
+            <Input.Checkbox 
               id="checkbox" 
               name="checkbox" 
               checked={data.remember}
@@ -90,7 +89,7 @@ export default function Login({ status, canResetPassword }: LoginProps) {
               }
             >
               Lembrar-me
-            </Checkbox>
+            </Input.Checkbox>
 
             <If conditional={canResetPassword}>
               <Link className="mt-0.5" href={route('password.request')}>
@@ -98,14 +97,14 @@ export default function Login({ status, canResetPassword }: LoginProps) {
               </Link>
             </If>
           </div>
-        </Fieldset>
+        </Form.Fieldset>
 
         <Button type="submit" className="mb-4" disabled={processing}>
           Entrar
         </Button>
 
         <span>Não possui conta? <Link href={route('register')}>Cadastre-se agora</Link></span>
-      </Form>
+      </Form.Root>
     </main>
   )
 }

@@ -11,6 +11,9 @@ export default {
         secondaryColor: '#FF8181',
       }
     },
+    dropdown: {
+      primaryColor: '#555555'
+    },
     input: {
       default: {
         primaryColor: '#7853FF',
@@ -38,6 +41,27 @@ export default {
         primaryColor: '#EE404C',
         secondaryColor: '#FFEAEA',
       }
+    },
+    card: {
+      primaryColor: '#FFFFFF',
+      secondaryColor: '#D4D4D4',
+      shadownColor: '#00000010',
+    },
+    main: {
+      primaryColor: '#FFFFFF',
+      secondaryColor: '#D4D4D4',
+    },
+    list: {
+      item: {
+        primaryColor: '#646464',
+      }
+    },
+    article: {
+      display: {
+        primaryColor: '#6034FF',
+        secondaryColor: '#7853FF70',
+      },
+      shadowColor: '#00000020',
     }
   },
   system: {

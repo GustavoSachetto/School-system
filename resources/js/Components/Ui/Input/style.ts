@@ -4,12 +4,30 @@ import fonts from "@/Constants/fonts";
 import styled, { css } from "styled-components";
 
 const inputFonts = fonts.component.input;
-const inputBorders = borders.component.input;
 const inputColors = colors.component.input;
+const inputBorders = borders.component.input;
 
-export const StyledContainerInput = styled.div`
+const labelFonts = fonts.component.label;
+const labelColors = colors.component.label;
+
+export const StyledGroupInput = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+export const StyledLabel = styled.label<{ $required?: boolean }>`
+  font-size: ${labelFonts.sizeFont};
+  font-weight: ${labelFonts.weightFont};
+  color: ${colors.system.neutral.darkColor};
+  
+  ${(props) => {
+    return props.$required && css`
+      &::after {
+        content: "*";
+        color: ${labelColors.requiredColor};
+      }
+    `;
+  }}
 `;
 
 export const StyledInput = styled.input<{ $error?: string }>`

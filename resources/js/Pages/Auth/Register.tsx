@@ -1,14 +1,7 @@
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
-import Form from '@/Components/Ui/Form';
-import Fieldset from '@/Components/Ui/Form/Components/Fieldset';
-import Input from '@/Components/Ui/Input';
-import PasswordInput from '@/Components/Ui/PasswordInput';
-import ContainerInput from '@/Components/Ui/Form/Components/ContainerInput';
-import Label from '@/Components/Ui/Label';
-import Title from '@/Components/Ui/Form/Components/Title';
+import { Form, Input } from '@/Components/Ui';
 import Button from '@/Components/Ui/Button';
-import Checkbox from '@/Components/Ui/Checkbox';
 
 export default function Register() {
   const { data, setData, post, processing, errors, reset } = useForm({
@@ -30,19 +23,19 @@ export default function Register() {
     <main className="flex justify-center mt-10">
       <Head title="Cadastrar conta" />
 
-      <Form onSubmit={submit}>
-				<Title>Criar conta</Title>
+      <Form.Root onSubmit={submit}>
+				<Form.Title>Criar conta</Form.Title>
 
 				<p>
 					Bem-vindo a bordo! Estamos muito felizes por você ter decidido se juntar a nós como nosso novo cliente. Estamos ansiosos para começar esta jornada emocionante juntos! 
 				</p>
 
-				<Fieldset>
-					<ContainerInput>
-						<div>
-							<Label htmlFor="name" required>Nome</Label>
+				<Form.Fieldset>
+					<Form.Container>
+						<Input.Group>
+							<Input.Label htmlFor="name" required>Nome</Input.Label>
 
-							<Input
+							<Input.Text
 								id="name"
 								name="name"
 								type="text"
@@ -52,12 +45,14 @@ export default function Register() {
 								onChange={(e) => setData('name', e.target.value)}
 								error={errors.name}
 							/>
-						</div>
 
-						<div>
-							<Label htmlFor="email" required>Email</Label>
+							<Input.Error message={errors.name} />
+						</Input.Group>
 
-							<Input
+						<Input.Group>
+							<Input.Label htmlFor="email" required>Email</Input.Label>
+
+							<Input.Text
 								id="email"
 								type="email"
 								name="email"
@@ -67,12 +62,14 @@ export default function Register() {
 								onChange={(e) => setData('email', e.target.value)}
 								error={errors.email}
 							/>
-						</div>
 
-						<div>
-							<Label htmlFor="password" required>Senha</Label>
+							<Input.Error message={errors.email} />
+						</Input.Group>
 
-							<PasswordInput
+						<Input.Group>
+							<Input.Label htmlFor="password" required>Senha</Input.Label>
+
+							<Input.Password
 								id="password"
 								name="password"
 								value={data.password}
@@ -81,10 +78,12 @@ export default function Register() {
 								error={errors.password}
 								onChange={(e) => setData('password', e.target.value)}
 							/>
-						</div>
-					</ContainerInput>
 
-          <Checkbox 
+							<Input.Error message={errors.password} />
+						</Input.Group>
+					</Form.Container>
+
+          <Input.Checkbox 
             id="checkbox" 
             name="checkbox" 
             checked={data.confirmationTerm}
@@ -94,15 +93,15 @@ export default function Register() {
             }
           >
 						Concordo com todos os <Link className="text-base" href="/">Termos.</Link>
-					</Checkbox>
-				</Fieldset>
+					</Input.Checkbox>
+				</Form.Fieldset>
 
 				<Button type="submit" className="mb-4" disabled={processing}>
           Criar conta
         </Button>
 
         <span>Já possui conta? <Link href={route('login')}>Entre agora</Link></span>
-      </Form>
+      </Form.Root>
   	</main>
   )
 }

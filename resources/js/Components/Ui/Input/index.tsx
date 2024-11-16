@@ -1,16 +1,22 @@
-import { InputHTMLAttributes } from "react";
-import { StyledContainerInput, StyledInput } from "./style";
-import ContainerError from "./Components/ContainerError";
+import { StyledGroupInput, StyledInput, StyledLabel } from "./style";
+import { InputHTMLAttributes, HtmlHTMLAttributes, LabelHTMLAttributes } from "react";
 
-export type InputProps = {
+export function InputGroup({ children, ...props }: HtmlHTMLAttributes<HTMLDivElement>) {
+  return <StyledGroupInput {...props}>{children}</StyledGroupInput>
+}
+
+export type InputLabelProps = {
+  required?: boolean;
+} & LabelHTMLAttributes<HTMLLabelElement>
+
+export function InputLabel({ children, required, ...props }: InputLabelProps) {
+  return <StyledLabel $required={required} {...props}>{ children }</StyledLabel>
+}
+
+export type InputTextProps = {
   error?: string,
 } & InputHTMLAttributes<HTMLInputElement>
 
-export default function Input({ error, ...props }: InputProps) {
-  return (
-    <StyledContainerInput>
-      <StyledInput $error={error} {...props} />
-      <ContainerError message={error} />
-    </StyledContainerInput>
-  )
+export function InputText({ error, ...props }: InputTextProps) {
+  return <StyledInput $error={error} {...props} />
 }

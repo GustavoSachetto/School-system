@@ -12,6 +12,33 @@ export default {
         paddingX: 12,
         paddingY: 4,
       }
+    },
+    card: {
+      content: {
+        defaultPadding: 16,
+      }
+    },
+    article: {
+      content: {
+        paddingY: 24,
+      }
+    },
+    header: {
+      paddingY: 16,
+    },
+    main: {
+      paddingY: 24,
+    },
+    section: {
+      paddingX: 24,
+      paddingY: 8,
+    },
+    list: {
+      paddingX: 36,
+    },
+    dropdown: {
+      paddingY: 4,
+      paddingX: 12,
     }
   },
   system: {

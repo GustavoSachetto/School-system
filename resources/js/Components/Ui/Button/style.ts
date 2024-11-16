@@ -1,22 +1,22 @@
-import styled, { css } from "styled-components";
+import fonts from "@/Constants/fonts";
 import colors from "@/Constants/colors";
 import borders from "@/Constants/borders";
-import fonts from "@/Constants/fonts";
 import paddings from "@/Constants/paddings";
+import styled, { css } from "styled-components";
 
-const buttonPadding = paddings.component.button; 
+const buttonFonts = fonts.component.button;
 const buttonColors = colors.component.button;
 const buttonBorders = borders.component.button;
-const buttonFonts = fonts.component.button;
+const buttonPadding = paddings.component.button; 
 
 export const StyledButton = styled.button<{ $styled?: "outline" | "alert" }>`
   width: 100%;
-  padding: ${buttonPadding.defaultPadding}px;
-  color: ${colors.system.neutral.lightColor};
-  border-radius: ${buttonBorders.radiusBorder};
   font-size: ${buttonFonts.sizeFont};
   font-style: ${buttonFonts.styleFont};
   font-weight: ${buttonFonts.weightFont};
+  padding: ${buttonPadding.defaultPadding}px;
+  color: ${colors.system.neutral.lightColor};
+  border-radius: ${buttonBorders.radiusBorder};
 
   ${(props) => {
     switch (props.$styled) {

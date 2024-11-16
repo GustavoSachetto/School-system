@@ -1,14 +1,10 @@
 import { Head, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
-import Form from '@/Components/Ui/Form';
-import Title from '@/Components/Ui/Form/Components/Title';
-import Fieldset from '@/Components/Ui/Form/Components/Fieldset';
-import Label from '@/Components/Ui/Label';
-import Input from '@/Components/Ui/Input';
-import If from '@/Components/If';
+import { Form, Input } from '@/Components/Ui';
 import Button from '@/Components/Ui/Button';
+import If from '@/Components/If';
 
-type ForgotPasswordProps = {
+export type ForgotPasswordProps = {
   status?: string 
 }
 
@@ -27,8 +23,8 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
     <main className="flex justify-center mt-10">
       <Head title="Recuperar conta" />
 
-      <Form onSubmit={submit}>
-        <Title>Recuperar conta</Title>
+      <Form.Root onSubmit={submit}>
+        <Form.Title>Recuperar conta</Form.Title>
 
         <p>
           Esqueceu sua senha? Sem problemas. Basta nos informar seu endereço de e-mail e nós lhe enviaremos um link de redefinição de senha que permitirá que você escolha uma nova.
@@ -40,11 +36,11 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
           </div>
         </If>
 
-        <Fieldset>
-          <div>
-            <Label htmlFor="email" required>Email</Label>
+        <Form.Fieldset>
+          <Input.Group>
+            <Input.Label htmlFor="email" required>Email</Input.Label>
 
-            <Input
+            <Input.Text
               id="email"
               type="email"
               name="email"
@@ -54,13 +50,15 @@ export default function ForgotPassword({ status }: ForgotPasswordProps) {
               error={errors.email}
               onChange={(e) => setData('email', e.target.value)}
             />
-          </div>
-        </Fieldset>
+
+            <Input.Error message={errors.email} />
+          </Input.Group>
+        </Form.Fieldset>
 
         <Button type="submit" className="mb-2" disabled={processing}>
           Recuperar conta
         </Button>
-      </Form>
+      </Form.Root>
     </main>
   )
 }
