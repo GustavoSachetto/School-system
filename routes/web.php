@@ -7,7 +7,7 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return Inertia::render('Home', [
-        'courses' => Course::all()
+        'courses' => Course::limit(8)->get()
     ]);
 })->name('home');
 
