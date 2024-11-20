@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import { Course } from "@/types";
+import { ReactNode } from "react";
 import { Card } from "@/Components/Ui";
 import { Link } from "@inertiajs/react";
 
