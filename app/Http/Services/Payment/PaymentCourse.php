@@ -5,7 +5,6 @@ namespace App\Http\Services\Payment;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\CoursePayment;
-use App\Http\Services\Payment\PaymentService\MercadoPago;
 use App\Http\Services\Payment\PaymentService\PaymentInterface;
 
 class PaymentCourse extends Payment
@@ -53,7 +52,7 @@ class PaymentCourse extends Payment
             'user_id'            => $this->user->id,
             'course_id'          => $this->course->id,
             'payment_id'         => $payment->id,
-            'model_type'         => MercadoPago::class,
+            'model_type'         => $paymentService::class,
             'payment_method_id'  => $paymentMethodId,
             'transaction_amount' => $this->course->price,
         ]);
