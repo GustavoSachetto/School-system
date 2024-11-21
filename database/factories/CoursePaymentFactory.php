@@ -23,10 +23,13 @@ class CoursePaymentFactory extends Factory
         static::$countIfRandomNotExists = $this->count;
 
         return [
-            'price'     => fake()->randomFloat(2, 120, 400),
-            'status'    => fake()->randomElement(['pending', 'approved', 'authorized', 'cancelled']),
-            'user_id'   => $this->randomUsers('student')->shift(),
-            'course_id' => $this->randomModels(Course::class)->shift(),
+            'status'             => fake()->randomElement(['pending', 'approved', 'authorized', 'cancelled']),
+            'payment_id'         => fake()->randomNumber(),
+            'user_id'            => $this->randomUsers('student')->shift(),
+            'course_id'          => $this->randomModels(Course::class)->shift(),
+            'model_type'         => 'App\Services\BankService',
+            'payment_method_id'  => 'pix',
+            'transaction_amount' => fake()->randomFloat(2, 120, 400),
         ];
     }
 }

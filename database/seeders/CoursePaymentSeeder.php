@@ -12,22 +12,31 @@ class CoursePaymentSeeder extends Seeder
      */
     private array $coursePayments = [
         [
-            'price'     => '0.59',
-            'status'    => 'approved',
-            'user_id'   => 7,
-            'course_id' => 1,
+            'status'             => 'approved',
+            'user_id'            => 7,
+            'payment_id'         => 1,
+            'course_id'          => 11,
+            'model_type'         => 'App\Services\BankService',
+            'payment_method_id'  => 'pix',
+            'transaction_amount' => '0.59',
         ],
         [
-            'price'     => '1.99',
-            'status'    => 'pending',
-            'user_id'   => 7,
-            'course_id' => 3,
+            'status'             => 'pending',
+            'user_id'            => 7,
+            'payment_id'         => 13,
+            'course_id'          => 3,
+            'model_type'         => 'App\Services\BankService',
+            'payment_method_id'  => 'pix',
+            'transaction_amount' => '1.99',
         ],
         [
-            'price'     => '2.99',
-            'status'    => 'approved',
-            'user_id'   => 9,
-            'course_id' => 4,
+            'status'             => 'approved',
+            'user_id'            => 9,
+            'payment_id'         => 17,
+            'course_id'          => 4,
+            'model_type'         => 'App\Services\BankService',
+            'payment_method_id'  => 'pix',
+            'transaction_amount' => '2.99',
         ],
     ];
 

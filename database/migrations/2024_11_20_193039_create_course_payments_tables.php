@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('course_payments', function (Blueprint $table) {
             $table->id();
-            $table->double('price');
             $table->string("status");
+            $table->string('model_type');
+            $table->char('payment_method_id', 22);
+            $table->double('transaction_amount');
+            $table->unsignedBigInteger('payment_id');
             $table->foreignId('course_id')->constrained('courses');
             $table->foreignId('user_id')->constrained('users');
+            $table->unique(['course_id', 'user_id']);
             $table->softDeletes();
             $table->timestamps();
         });
