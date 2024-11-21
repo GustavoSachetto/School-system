@@ -15,6 +15,18 @@ class PaymentCourse extends Payment
     ) {}
 
     /**
+     * Check if the course payment has been approved.
+     */
+    public function checkCoursePayment(PaymentInterface $paymentService, CoursePayment $coursePayment): mixed
+    {
+        $coursePayment = CoursePayment::find($coursePayment->id)->approved();
+
+        return $coursePayment 
+            ? $coursePayment
+            : $this->capturePayment($paymentService, $coursePayment);
+    }
+
+    /**
      * Capture authorized payment to the bank.
      */
     public function capturePayment(PaymentInterface $paymentService, CoursePayment $coursePayment): mixed
@@ -26,18 +38,6 @@ class PaymentCourse extends Payment
         ]);
 
         return $payment;
-    }
-
-    /**
-     * Check if the course payment has been approved.
-     */
-    public function checkCoursePayment(PaymentInterface $paymentService, CoursePayment $coursePayment): mixed
-    {
-        $coursePayment = CoursePayment::find($coursePayment->id)->approved();
-
-        return $coursePayment 
-            ? $coursePayment
-            : $this->capturePayment($paymentService, $coursePayment);
     }
 
     /** 
