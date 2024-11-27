@@ -9,15 +9,12 @@ use App\Http\Requests\HomeSearchRequest;
 
 class HomeController extends Controller
 {
-    /**
-     * Default rendering component.
-     */
-    public string $renderingComponent = 'Home';
-    
-    /**
-     * Item limit per query.
-     */
     private int $limitQueries = 8;
+
+    public function __construct() 
+    {
+        $this->renderingComponent = 'Home';
+    }
 
     /**
      * Display a rendering of the courses.
@@ -32,6 +29,14 @@ class HomeController extends Controller
     }
 
     /**
+     * Display a rendering of the about page.
+     */
+    public function about(): Response
+    {
+        return Inertia::render('About');
+    }
+
+    /**
      * Search a newly created resource in storage.
      */
     public function search(HomeSearchRequest $homeSearchRequest): Response
@@ -41,13 +46,5 @@ class HomeController extends Controller
         return $this->renderComponent([
             'courses' => $queryResult
         ]); 
-    }
-
-    /**
-     * Render default home controller component.
-     */
-    private function renderComponent(?array $props = null): Response
-    {
-        return Inertia::render($this->renderingComponent, $props); 
     }
 }

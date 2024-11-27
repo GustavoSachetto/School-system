@@ -1,32 +1,16 @@
 <?php
 
-use Inertia\Inertia;
-use App\Models\Course;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
 
 Route::group([], function () {
     Route::prefix('/')->name('home')->group(base_path('routes/pages/home.php'));
+    Route::prefix('/course')->name('course')->group(base_path('routes/pages/course.php'));
 });
 
-Route::get('/course/{title}', function (string $title) {
-    return Inertia::render('Course', [
-        'course' => Course::where('title', $title)->firstOrFail()
-    ]);
-});
+Route::group([], function () {
+    Route::prefix('/')->group(base_path('routes/pages/auth/auth.php'));
+    Route::prefix('/')->group(base_path('routes/pages/auth/guest.php'));
+    Route::prefix('/')->name('auth')->group(base_path('routes/pages/auth/guest.php'));
+    Route::prefix('/profile')->name('profile')->group(base_path('routes/pages/auth/profile.php'));
 
-Route::get('/about', function () {
-    return Inertia::render('About');
-})->name('about');
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__.'/auth.php';
+})->middleware('auth');
