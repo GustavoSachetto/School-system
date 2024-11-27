@@ -29,7 +29,9 @@ export type CollectionCoursesProps = {
 }
 
 export function CollectionCardCourse({ courses }: CollectionCoursesProps): ReactNode {
-  return courses?.map((course) =>
+  return courses.length > 0 ? courses?.map((course) =>
     <CardCourse key={course.id} course={course} /> 
+  ) : (
+    <span className="text-[16px]">Nenhum curso encontrado.</span>
   )
 }
