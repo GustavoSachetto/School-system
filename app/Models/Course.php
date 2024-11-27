@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -41,6 +42,14 @@ class Course extends Model
         return new Attribute(
             get: fn () => url($this->image)
         );
+    }
+
+    /**
+     * Scope a query to only include courses where the title or name matches what is expected.
+     */
+    public function scopeWhereTitleOrName(Builder $query, string $titleOrName): void
+    {
+        $query->whereAny(['title', 'name'], 'like', "%{$titleOrName}%");
     }
 
     /**

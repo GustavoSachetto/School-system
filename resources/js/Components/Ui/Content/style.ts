@@ -10,9 +10,14 @@ export const StyledContent = styled.div`
   justify-content: start;
 `;
 
-export const StyledContentTitle = styled.h3`
+export const StyledContentTitle = styled.h2`
   font-size: ${contentFonts.title.sizeFont};
   font-weight: ${contentFonts.title.weightFont};
+`;
+
+export const StyledContentSubTitle = styled.h3`
+  font-size: ${contentFonts.subtitle.sizeFont};
+  font-weight: ${contentFonts.subtitle.weightFont};
 `;
 
 export const StyledContentText = styled.p`

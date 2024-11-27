@@ -17,6 +17,7 @@ export const StyledList = styled.ul`
   box-sizing: border-box;
 
   li {
+    margin: 0;
     display: flex;
     flex-direction: row;
     align-items: center;

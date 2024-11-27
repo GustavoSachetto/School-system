@@ -4,7 +4,7 @@ namespace App\Http\Services\Payment\PaymentService;
 
 use App\Models\User;
 
-interface PaymentInterface
+interface PaymentService
 {
     public function __construct(User $user);
     public function capturePayment(int $paymentId);

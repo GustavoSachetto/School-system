@@ -1,6 +1,7 @@
 import { Course } from "@/types";
-import { Head } from "@inertiajs/react";
-import { Header, Article, Section } from "@/Components/Ui";
+import { FormEventHandler } from "react";
+import { Head, useForm } from "@inertiajs/react";
+import { Header, Article, Section, SearchBar } from "@/Components/Ui";
 import { CollectionCardCourse } from "@/Components/CardCourse";
 import Main from "@/Components/Ui/Main";
 import HeaderLayout from "@/Layouts/HeaderLayout";
@@ -10,6 +11,15 @@ export type HomePageProps = {
 }
 
 export default function Home({ courses }: HomePageProps) {
+  const { setData, post } = useForm({
+    titleOrName: ''
+  });
+
+  const submit: FormEventHandler = (e) => {
+    e.preventDefault();
+    post('/');
+  }
+
   return (
     <>
       <Head title="Home" />
@@ -25,6 +35,12 @@ export default function Home({ courses }: HomePageProps) {
         </Header.Article>
       </HeaderLayout>
 
+      <SearchBar.Form onSubmit={submit}>
+        <SearchBar.Container>
+          <SearchBar.Input placeholder="Pesquisar..." onChange={(e) => setData('titleOrName', e.target.value)} />
+        </SearchBar.Container>
+      </SearchBar.Form>
+      
       <Main styled="border">
         <Article.Root>
           <Section.Root className="flex-wrap">

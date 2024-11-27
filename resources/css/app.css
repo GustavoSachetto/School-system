@@ -12,6 +12,11 @@ h2 {
   vertical-align: baseline;
 }
 
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 p {
   color: #646464;
   font-size: 14px;
@@ -19,6 +24,11 @@ p {
 
 span {
   font-size: 14px;
+}
+
+li {
+  list-style-type: disc;
+  margin: 2px 0 0 20px;
 }
 
 a {

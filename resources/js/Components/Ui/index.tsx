@@ -1,16 +1,17 @@
-import { CardRoot, CardImage, CardContent, CardText, CardFooter, CardTitle } from "@/Components/Ui/Card";
-import { FormRoot, FormTitle, FormFieldset, FormContainer } from "@/Components/Ui/Form";
+import { ListRoot, ListTitle, ListItem } from "@/Components/Ui/List";
 import { InputGroup, InputLabel, InputText } from "@/Components/Ui/Input";
+import { PriceRoot, PriceCurrent, PriceOld } from "@/Components/Ui/Price";
+import { SectionRoot, SectionImage, SectionContent } from "@/Components/Ui/Section";
+import { FormRoot, FormTitle, FormFieldset, FormContainer } from "@/Components/Ui/Form";
 import { HeaderRoot, HeaderContainer, HeaderNav, HeaderArticle } from "@/Components/Ui/Header";
 import { ArticleRoot, ArticleTitle, ArticleText, ArticleContent } from "@/Components/Ui/Article";
-import { SectionRoot, SectionImage, SectionContent } from "@/Components/Ui/Section";
-import { ContentRoot, ContentTitle, ContentText, ContentPrice, ContentButton } from "@/Components/Ui/Content";
-import { PriceRoot, PriceCurrent, PriceOld } from "@/Components/Ui/Price";
-import { ListRoot, ListTitle, ListItem } from "@/Components/Ui/List";
 import { DropdownRoot, DropdownTrigger, DropdownContent, DropdownLink } from "@/Components/Ui/Dropdown";
+import { CardRoot, CardImage, CardContent, CardText, CardFooter, CardTitle } from "@/Components/Ui/Card";
+import { SearchBarForm, SearchBarContainer, SearchBarInput } from "@/Components/Ui/SearchBar";
+import { ContentRoot, ContentTitle, ContentSubTitle, ContentText, ContentPrice, ContentButton } from "@/Components/Ui/Content";
+import InputError from "@/Components/Ui/Input/Components/Error";
 import InputPassword from "@/Components/Ui/Input/Components/Password";
 import InputCheckbox from "@/Components/Ui/Input/Components/Checkbox";
-import InputError from "@/Components/Ui/Input/Components/Error";
 
 export const Card = {
   Root: CardRoot,
@@ -51,6 +52,7 @@ export const Section = {
 export const Content = {
   Root: ContentRoot,
   Title: ContentTitle,
+  SubTitle: ContentSubTitle,
   Text: ContentText,
   Price: ContentPrice,
   Button: ContentButton,
@@ -75,6 +77,12 @@ export const Input = {
   Password: InputPassword,
   Checkbox: InputCheckbox,
   Error: InputError,
+}
+
+export const SearchBar = {
+  Form: SearchBarForm,
+  Container: SearchBarContainer,
+  Input: SearchBarInput,
 }
 
 export const Dropdown = {

@@ -41,6 +41,10 @@ export default {
         sizeFont: '28px',
         weightFont: '600',
       },
+      subtitle: {
+        sizeFont: '24px',
+        weightFont: '600',
+      },
       text: {
         sizeFont: '16px',
         weightFont: '400',

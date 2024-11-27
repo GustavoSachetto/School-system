@@ -21,12 +21,16 @@ class ClassroomFactory extends Factory
     {
         static::$countIfRandomNotExists = $this->count;
 
+        $course = $this->randomModels(Course::class)->shift();
+
         return [
-            'start_date'    => fake()->dateTimeBetween('-4 years', '-2 years'),
-            'end_date'      => fake()->dateTimeBetween('-1 years'),
-            'workload'      => fake()->numberBetween(400, 1200),
-            'course_id'     => $this->randomModels(Course::class)->shift(),
-            'instructor_id' => $this->randomModels(Instructor::class)->random(),
+            'start_date'       => fake()->dateTimeBetween('-4 years', '-2 years'),
+            'end_date'         => fake()->dateTimeBetween('-1 years'),
+            'total_places'     => fake()->numberBetween(30, 40),
+            'available_places' => fake()->numberBetween(0, 30),
+            'workload'         => $course->workload,
+            'course_id'        => $course->id,
+            'instructor_id'    => $this->randomModels(Instructor::class)->random(),
         ];
     }
 }

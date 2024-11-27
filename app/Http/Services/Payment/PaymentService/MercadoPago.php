@@ -8,7 +8,7 @@ use MercadoPago\Resources\Payment;
 use MercadoPago\Client\Common\RequestOptions;
 use MercadoPago\Client\Payment\PaymentClient;
 
-class MercadoPago implements PaymentInterface
+class MercadoPago implements PaymentService
 {
     private PaymentClient $client;
     private RequestOptions $requestOptions;

@@ -36,8 +36,8 @@ export default function HeaderLayout({ children }: HtmlHTMLAttributes<HTMLHeadin
     <Header.Root>
       <Header.Nav>
         <Header.Container>
-            <Link href="/">Sobre</Link>
             <Link href="/">Cursos</Link>
+            <Link href="/about">Sobre</Link>
         </Header.Container>
 
         <Header.Container>

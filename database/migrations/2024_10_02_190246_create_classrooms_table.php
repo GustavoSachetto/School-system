@@ -17,7 +17,9 @@ return new class extends Migration
             $table->foreignId('course_id')->constrained('courses', 'id', 'course_classroom')->noActionOnUpdate()->noActionOnDelete();
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
-            $table->unsignedMediumInteger('workload')->nullable();
+            $table->unsignedSmallInteger('workload');
+            $table->unsignedSmallInteger('total_places');
+            $table->unsignedSmallInteger('available_places');
             $table->unique(['instructor_id', 'course_id']);
             $table->softDeletes();
             $table->timestamps();
