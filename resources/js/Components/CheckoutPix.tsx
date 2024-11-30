@@ -1,10 +1,10 @@
 import { useState } from "react";
+import { router } from "@inertiajs/react";
 import { Course, CoursePayment, Payment } from "@/types";
 import { formatCoursePrice } from "@/utils/formatCourse";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Section, Content, Price, List } from "@/Components/Ui";
 import LogoPix from "@/img/logo-pix.png";
-import { router } from "@inertiajs/react";
 
 export type CheckoutPixProps = {
   course: Course,
