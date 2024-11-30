@@ -41,7 +41,7 @@ class HomeController extends Controller
      */
     public function search(HomeSearchRequest $homeSearchRequest): Response
     {
-        $queryResult = Course::whereTitleOrName($homeSearchRequest->titleOrName)->limit($this->limitQueries)->get();
+        $queryResult = Course::titleOrName($homeSearchRequest->titleOrName)->limit($this->limitQueries)->get();
 
         return $this->renderComponent([
             'courses' => $queryResult

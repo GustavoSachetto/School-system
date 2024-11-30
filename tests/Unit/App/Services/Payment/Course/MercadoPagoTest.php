@@ -17,13 +17,13 @@ class MercadoPagoTest extends BaseTestCase
      */
     public function test_users_can_send_payment_for_courses(): void
     {
-        $user = User::inRandomOrder()->first();
+        $user = User::find(1);
         $course = Course::inRandomOrder()->first();
         
         $paymentCourse = new PaymentCourse($user, $course);
-        $payment = $paymentCourse->sendPayment(new MercadoPago($user), 'pix');
+        $coursePayment = $paymentCourse->sendPayment(new MercadoPago($user), 'pix');
 
-        $this->assertInstanceOf(Payment::class, $payment);
+        $this->assertInstanceOf(CoursePayment::class, $coursePayment);
     }
 
     /**

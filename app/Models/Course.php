@@ -47,7 +47,7 @@ class Course extends Model
     /**
      * Scope a query to only include courses where the title or name matches what is expected.
      */
-    public function scopeWhereTitleOrName(Builder $query, string $titleOrName): void
+    public function scopeTitleOrName(Builder $query, string $titleOrName): void
     {
         $query->whereAny(['title', 'name'], 'like', "%{$titleOrName}%");
     }

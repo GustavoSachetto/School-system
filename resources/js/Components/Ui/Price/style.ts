@@ -18,3 +18,7 @@ export const StyledPriceOld = styled.span`
   font-size: 14px;
   text-decoration: line-through;
 `;
+
+export const StyledPriceLegend = styled.span`
+  margin-bottom: 12px;
+`;

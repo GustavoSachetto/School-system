@@ -25,6 +25,9 @@ export default {
         primaryColor: '#EE404C',
       }
     },
+    hr: {
+      defaultColor: '#64646470',
+    },
     label: {
       requiredColor: '#6034FF',
     },

@@ -17,6 +17,25 @@ export interface Course {
   price: number,
 }
 
+export interface CoursePayment {
+  model_type: string,
+  payment_method_id: string,
+  transaction_amount: number,
+  payment_id: number,
+  course_id: number,
+  user_id: number,
+  generated_at: string
+}
+
+export interface Payment {
+  point_of_interaction: {
+    transaction_data: {
+      qr_code: string,
+      qr_code_base64: string,
+    }
+  }
+}
+
 export type PageProps<
   T extends Record<string, unknown> = Record<string, unknown>,
 > = T & {

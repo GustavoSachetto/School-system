@@ -18,7 +18,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/bd0fafdc9d5d3cd9a4ff56984c9a28d1.png',
             'requirement' => 'Neste curso de Laravel aprenderemos a trabalhar com um dos frameworks PHP mais utilizados atualmente. O Laravel é baseado na arquitetura MVC e tem um excelente desempenho. Veremos no decorrer do curso instalação, configuração do ambiente, rotas, manipulação de registros em banco de dados e também o desenvolvimento de templates.',
             'workload'    => '65',
-            'price'       => '0.59',
+            'price'       => '0.09',
         ],
         [ 
             'title'       => 'mongo-database',
@@ -36,7 +36,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/d46bd127ae7218fc83afaa7959f9741a.png',
             'requirement' => 'Neste curso de TypeScript serão apresentados os conceitos do TypeScript na forma de classes, módulos, interfaces, tipos e funções, para mostrar como um desenvolvedor da plataforma .NET pode aumentar sua produtividade e a qualidade e segurança de um código mesmo utilizando o JavaScript.',
             'workload'    => '30',
-            'price'       => '1.99',
+            'price'       => '0.01',
         ],
         [ 
             'title'       => 'javascript-programming-language',
@@ -45,7 +45,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/1bfbc56006417b812a8d86d55647f7a9.png',
             'requirement' => 'Neste curso, vamos preparar nosso ambiente de desenvolvimento com JavaScript e imprimir o texto "Hello World" com Node.js.',
             'workload'    => '20',
-            'price'       => '2.99',
+            'price'       => '0.03',
         ],
         [ 
             'title'       => 'java-oriented-object',
@@ -54,7 +54,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/8ce91eb8141f5af7ea1cf9288322a7d6.png',
             'requirement' => 'O objetivo deste curso básico de Java e Orientação a Objetos é apresentar os conceitos básicos da linguagem de programação Java e a orientação a objetos (OO), visando ensinar usuários leigos, com pouca experiência em linguagem de programação a trabalhar com a plataforma Java. O foco do curso é apresentar conceitos, aplicando sempre que possível a problemas práticos, apresentando muitos conceitos e exemplos práticos. Ao final do curso, o usuário estará capacitado a utilizar a sintaxe da linguagem Java, desenvolver classes, aplicar os conceitos de herança, polimorfismo, classes abstratas e interfaces no desenvolvimento de projetos OO.',
             'workload'    => '36',
-            'price'       => '1.99',
+            'price'       => '0.07',
         ],
         [ 
             'title'       => 'jwt-secret-token',
@@ -63,7 +63,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/a9bbe9106b0a03ebf1d79553edc93673.png',
             'requirement' => 'Neste curso apresentaremos os conceitos introdutórios do JWT, suas características e funcionamento para que você saiba quando e onde usar. Veremos também um exemplo prático utilizando o JWT para recuperar o assunto e o emissor do token. Com isso, você poderá usar junto com qualquer tecnologia.',
             'workload'    => '5',
-            'price'       => '2.39',
+            'price'       => '0.05',
         ],
         [ 
             'title'       => 'mysql-relational-database',
@@ -81,7 +81,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/1e86128fbb1a9dd7bb31e6f7a1378f61.png',
             'requirement' => 'Neste curso apresentaremos os conceitos introdutórios do PHP, suas características e funcionamento. Veremos também um exemplo prático utilizando o PHP.',
             'workload'    => '40',
-            'price'       => '0.99',
+            'price'       => '0.01',
         ],
         [ 
             'title'       => 'java-programming-language',
@@ -90,7 +90,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/a0413e270769b46bd9ab517588fbc9b1.jpeg',
             'requirement' => 'Neste curso apresentaremos os conceitos introdutórios do Java, suas características e funcionamento. Veremos também um exemplo prático utilizando o Java.',
             'workload'    => '2',
-            'price'       => '0.79',
+            'price'       => '0.02',
         ],
         [ 
             'title'       => 'composer-dependency-manager',
@@ -99,7 +99,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/074fcb7a5b48478ac3abdb88804af479.jpg',
             'requirement' => 'Neste curso apresentaremos os conceitos introdutórios do Composer, suas características e funcionamento. Veremos também um exemplo prático utilizando o Composer.',
             'workload'    => '2',
-            'price'       => '0.99',
+            'price'       => '0.06',
         ],
         [ 
             'title'       => 'jquery-framework-js',
@@ -108,7 +108,7 @@ class CourseSeeder extends Seeder
             'image'       => 'storage/images/course/5031bf5fb203c366f42075c72a7706b6.png',
             'requirement' => 'Neste curso apresentaremos os conceitos introdutórios do JQuery, uma biblioteca JavaScript para desenvolvimento web front-end, suas características e funcionamento. Veremos também um exemplo prático utilizando o JQuery.',
             'workload'    => '8',
-            'price'       => '2.99',
+            'price'       => '0.09',
         ],
         [ 
             'title'       => 'html-markup-language',

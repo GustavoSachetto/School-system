@@ -18,7 +18,7 @@ class CoursePaymentSeeder extends Seeder
             'course_id'          => 11,
             'model_type'         => 'App\Services\BankService',
             'payment_method_id'  => 'pix',
-            'transaction_amount' => '0.59',
+            'transaction_amount' => '0.09',
         ],
         [
             'status'             => 'pending',
@@ -27,7 +27,7 @@ class CoursePaymentSeeder extends Seeder
             'course_id'          => 3,
             'model_type'         => 'App\Services\BankService',
             'payment_method_id'  => 'pix',
-            'transaction_amount' => '1.99',
+            'transaction_amount' => '0.01',
         ],
         [
             'status'             => 'approved',
@@ -36,7 +36,7 @@ class CoursePaymentSeeder extends Seeder
             'course_id'          => 4,
             'model_type'         => 'App\Services\BankService',
             'payment_method_id'  => 'pix',
-            'transaction_amount' => '2.99',
+            'transaction_amount' => '0.03',
         ],
     ];
 

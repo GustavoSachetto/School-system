@@ -1,4 +1,4 @@
-import { Head } from "@inertiajs/react";
+import { Head, useForm } from "@inertiajs/react";
 import { Course as CourseInterface } from "@/types";
 import { Header, Article, Section, Content, Price, List } from "@/Components/Ui";
 import { formatCourseTitle, formatCoursePrice, formatCourseOldPrice } from "@/utils/formatCourse";
@@ -13,6 +13,15 @@ export type CoursePageProps = {
 }
 
 export default function Course({ course }: CoursePageProps) {
+  const { post, processing } = useForm<{ courseId?: number }>({
+    courseId: course.id
+  });
+
+  const handleSubmit: (e: React.MouseEvent) => void = (e) => {
+    e.preventDefault();
+    post(route('auth.course.payment.store'));
+  }
+
   return (
     <>
       <Head title={course.name} />
@@ -44,12 +53,12 @@ export default function Course({ course }: CoursePageProps) {
                 <Price.Current>{formatCoursePrice(course.price)}</Price.Current>
               </Content.Price>
              
-              <Content.Button styled="outline">Comece agora</Content.Button>
+              <Content.Button onClick={handleSubmit} disabled={processing} styled="outline">Comece agora</Content.Button>
             </Section.Content>
           </Section.Root>
         </Article.Root>
         <Article.Root>
-          <List.Root>
+          <List.Root direction="inline">
             <List.Title>Incluído no curso: </List.Title>
             <List.Item>
               <img src={Certificate} alt="Certificado" />

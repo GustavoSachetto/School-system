@@ -1,14 +1,14 @@
 import { ListRoot, ListTitle, ListItem } from "@/Components/Ui/List";
 import { InputGroup, InputLabel, InputText } from "@/Components/Ui/Input";
-import { PriceRoot, PriceCurrent, PriceOld } from "@/Components/Ui/Price";
-import { SectionRoot, SectionImage, SectionContent } from "@/Components/Ui/Section";
+import { PriceRoot, PriceCurrent, PriceOld, PriceLegend } from "@/Components/Ui/Price";
+import { SectionRoot, SectionImage, SectionContent, SectionLine } from "@/Components/Ui/Section";
 import { FormRoot, FormTitle, FormFieldset, FormContainer } from "@/Components/Ui/Form";
 import { HeaderRoot, HeaderContainer, HeaderNav, HeaderArticle } from "@/Components/Ui/Header";
 import { ArticleRoot, ArticleTitle, ArticleText, ArticleContent } from "@/Components/Ui/Article";
 import { DropdownRoot, DropdownTrigger, DropdownContent, DropdownLink } from "@/Components/Ui/Dropdown";
 import { CardRoot, CardImage, CardContent, CardText, CardFooter, CardTitle } from "@/Components/Ui/Card";
 import { SearchBarForm, SearchBarContainer, SearchBarInput } from "@/Components/Ui/SearchBar";
-import { ContentRoot, ContentTitle, ContentSubTitle, ContentText, ContentPrice, ContentButton } from "@/Components/Ui/Content";
+import { ContentRoot, ContentTitle, ContentSubTitle, ContentImage, ContentText, ContentMark, ContentPrice, ContentButton, ContentContainerButton } from "@/Components/Ui/Content";
 import InputError from "@/Components/Ui/Input/Components/Error";
 import InputPassword from "@/Components/Ui/Input/Components/Password";
 import InputCheckbox from "@/Components/Ui/Input/Components/Checkbox";
@@ -47,21 +47,26 @@ export const Section = {
   Root: SectionRoot,
   Image: SectionImage,
   Content: SectionContent,
+  Line: SectionLine,
 }
 
 export const Content = {
   Root: ContentRoot,
   Title: ContentTitle,
   SubTitle: ContentSubTitle,
+  Image: ContentImage,
   Text: ContentText,
+  Mark: ContentMark,
   Price: ContentPrice,
   Button: ContentButton,
+  ContainerButton: ContentContainerButton,
 }
 
 export const Price = {
   Root: PriceRoot,
   Current: PriceCurrent,
   Old: PriceOld,
+  Legend: PriceLegend,
 }
 
 export const List = {

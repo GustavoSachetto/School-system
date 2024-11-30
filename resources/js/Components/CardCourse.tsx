@@ -18,7 +18,7 @@ export function CardCourse({ course }: CourseProps): ReactNode {
         </Card.Text>
       </Card.Content>
       <Card.Footer>
-        <Link href={`/course/${course.title}`}>Saiba mais</Link>
+        <Link href={`/course/view/${course.title}`}>Saiba mais</Link>
       </Card.Footer>
     </Card.Root>
   )
