@@ -67,7 +67,7 @@ export default function About() {
               </Content.SubTitle>
 
               <ul>
-                <li>Sitema de pagamentos através do Mercado Pago.</li>
+                <li>Sistema de pagamentos através do Mercado Pago.</li>
                 <li>Fundamentos do design de interfaces.</li>
                 <li>Modularização e reaproveitamento de componentes React.</li>
                 <li>Orientação a Objetos do PHP 8+ (Traits, Abstract e Interfaces).</li>
