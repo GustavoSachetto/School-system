@@ -29,6 +29,57 @@ no qual foi escolhido o React para o frontend.
 - Utilização do Laravel Spatie para o tratamento do nível permissão dos usuários.
 - Design Patern, Design System, Clean code e Testes unitários.
 
+## Configurações iniciais
+Clonar repositório do projeto
+```
+git clone https://github.com/GustavoSachetto/School-system.git
+```
+
+Mudar para pasta do projeto
+```
+cd School-system
+```
+
+Instalar as dependências do projeto
+```
+composer install
+```
+
+Copiando arquivo de configuração .env
+```
+cp .env.example .env
+```
+
+Gerar chave de criptografia do laravel
+```
+php artisan key:generate
+```
+
+Executar as tabelas do banco de dados
+```
+php artisan migrate
+```
+
+Inserir informações no banco de dados
+```
+php artisan db:seed
+```
+
+Executar o teste do projeto
+```
+php artisan test
+```
+
+Executar o servidor web
+```
+npm run dev
+```
+
+Acessar o site no google
+```
+http://school-system.test
+```
+
 ## Algumas telas do sistema
 
 
