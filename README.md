@@ -65,6 +65,11 @@ Inserir informações no banco de dados
 php artisan db:seed
 ```
 
+Configurar seu token de acesso do Mercado Pago
+```
+php artisan app:configure-access-token-mercado-pago 'Your Access Token'
+```
+
 Executar o teste do projeto
 ```
 php artisan test
