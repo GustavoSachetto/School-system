@@ -96,7 +96,7 @@ __Página de login:__
 
 ![Login](https://github.com/user-attachments/assets/cadbd1e9-7be3-43db-9c19-e6cbd7674e82)
 
-__Página de pagamento:__
+__Página de pagamento do curso:__
 
 ![Pagamento](https://github.com/user-attachments/assets/460d8759-1d9c-4fe7-afb7-d01e77340774)
 
