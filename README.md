@@ -30,6 +30,8 @@ no qual foi escolhido o React para o frontend.
 - Design Patern, Design System, Clean code e Testes unitários.
 
 ## Configurações iniciais
+__Abaixo está todos os comandos necessários para executar o projeto localmente.__
+  
 Clonar repositório do projeto
 ```
 git clone https://github.com/GustavoSachetto/School-system.git
@@ -86,6 +88,16 @@ http://school-system.test
 ```
 
 ## Algumas telas do sistema
+__Página do curso:__
 
+![Curso](https://github.com/user-attachments/assets/89c8b97b-3635-4c6f-af07-0be54a4a9f6c)
+
+__Página de login:__
+
+![Login](https://github.com/user-attachments/assets/cadbd1e9-7be3-43db-9c19-e6cbd7674e82)
+
+__Página de pagamento:__
+
+![Pagamento](https://github.com/user-attachments/assets/460d8759-1d9c-4fe7-afb7-d01e77340774)
 
 *************
