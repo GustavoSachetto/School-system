@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Services\Payment;
+namespace App\Services\Payment;
 
 use App\Models\User;
 use App\Models\Course;
 use App\Models\CoursePayment;
 use MercadoPago\Resources\Payment as PaymentResource;
-use App\Http\Services\Payment\PaymentService\PaymentService;
+use App\Services\Payment\PaymentService\PaymentService;
 
 class PaymentCourse extends Payment
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services\Payment;
+namespace App\Services\Payment;
 
 abstract class Payment
 {

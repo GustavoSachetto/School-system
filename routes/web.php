@@ -13,5 +13,4 @@ Route::group([], function () {
     Route::prefix('/')->group(base_path('routes/pages/auth/guest.php'));
     Route::prefix('/course')->name('auth.course')->group(base_path('routes/pages/auth/course.php'));
     Route::prefix('/profile')->name('profile')->group(base_path('routes/pages/auth/profile.php'));
-
-})->middleware('auth');
+});

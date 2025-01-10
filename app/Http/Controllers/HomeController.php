@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use Inertia\Response;
 use App\Models\Course;
+use Illuminate\Support\Facades\Cache;
 use App\Http\Requests\HomeSearchRequest;
 
 class HomeController extends Controller
@@ -21,8 +22,10 @@ class HomeController extends Controller
      */
     public function index(): Response
     {
-        $queryResult = Course::limit($this->limitQueries)->get();
-
+        $queryResult = Cache::rememberForever('home-courses', function() {
+            return Course::limit($this->limitQueries)->get();
+        });
+        
         return $this->renderComponent([
             'courses' => $queryResult
         ]); 

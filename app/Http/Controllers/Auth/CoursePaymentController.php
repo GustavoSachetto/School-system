@@ -9,10 +9,10 @@ use App\Models\CoursePayment;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
-use App\Http\Services\Payment\PaymentCourse;
+use App\Services\Payment\PaymentCourse;
 use App\Http\Exception\PaymentRequiredException;
 use App\Http\Requests\CoursePaymentStoreRequest;
-use App\Http\Services\Payment\PaymentService\MercadoPago;
+use App\Services\Payment\PaymentService\MercadoPago;
 
 class CoursePaymentController extends Controller
 {

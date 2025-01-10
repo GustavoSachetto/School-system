@@ -6,8 +6,8 @@ use App\Models\User;
 use App\Models\Course;
 use App\Models\CoursePayment;
 use MercadoPago\Resources\Payment;
-use App\Http\Services\Payment\PaymentCourse;
-use App\Http\Services\Payment\PaymentService\MercadoPago;
+use App\Services\Payment\PaymentCourse;
+use App\Services\Payment\PaymentService\MercadoPago;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 class MercadoPagoTest extends BaseTestCase
